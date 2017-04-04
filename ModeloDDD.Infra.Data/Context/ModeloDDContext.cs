@@ -1,12 +1,13 @@
 ﻿using ModeloDDD.Domain.Entities;
+using ModeloDDD.Infra.Data.EntityConfig;
 using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 
-namespace ModeloDDD.Infra.Data.Context 
+namespace ModeloDDD.Infra.Data.Context
 {
-    public class ModeloDDContext : DbContext       
+    public class ModeloDDContext : DbContext
     {
         public ModeloDDContext()
              : base("ModeloDDD")
@@ -15,6 +16,8 @@ namespace ModeloDDD.Infra.Data.Context
         }
 
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Produtos> Produtos { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -35,6 +38,9 @@ namespace ModeloDDD.Infra.Data.Context
             //Coloca tamanho maximo
             modelBuilder.Properties<string>()
                .Configure(p => p.HasMaxLength(255));
+
+            modelBuilder.Configurations.Add(new ClienteConfiguration());
+            modelBuilder.Configurations.Add(new ProdutosConfiguration());
 
         }
 
@@ -57,5 +63,5 @@ namespace ModeloDDD.Infra.Data.Context
         }
     }
 
-   
+
 }

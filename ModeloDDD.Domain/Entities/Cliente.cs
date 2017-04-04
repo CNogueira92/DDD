@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 
 namespace ModeloDDD.Domain.Entities
 {
@@ -12,6 +13,8 @@ namespace ModeloDDD.Domain.Entities
         public DateTime DataCadastro { get; set; }
 
         public bool Ativo { get; set; }
+
+        public IEnumerable<Produtos> Produtos { get; set; }
 
         public bool ClienteEspecial(Cliente cliente)
         {
