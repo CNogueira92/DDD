@@ -4,11 +4,17 @@ using ModeloDDD.MVC.ViewModels;
 
 namespace ModeloDDD.MVC.AutoMapper
 {
-    public class DomainToViewModelMappingProfile  
+    public class DomainToViewModelMappingProfile : Profile
     {
-       protected override void Configuration()
+        public string ProfileName
         {
-            Mapper.
+            get { return "DomainToViewModelMappingProfile"; }
+        }
+
+        protected void Configure()
+        {
+            Mapper.Initialize(cfg => cfg.CreateMap<ClienteViewModel, Cliente>());
+            Mapper.Initialize(cfg => cfg.CreateMap<ProdutosViewModel, Produtos>());
         }
     }
 }

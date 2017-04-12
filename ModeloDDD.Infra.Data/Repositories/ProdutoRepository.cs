@@ -1,7 +1,6 @@
-﻿using System;
+﻿using ModeloDDD.Domain.Entities;
+using ModeloDDD.Domain.Interfaces.Repositories;
 using System.Collections.Generic;
-using ModeloDDD.Domain.Entities;
-using ModeloDDD.Domain.Interfaces;
 using System.Linq;
 
 namespace ModeloDDD.Infra.Data.Repositories

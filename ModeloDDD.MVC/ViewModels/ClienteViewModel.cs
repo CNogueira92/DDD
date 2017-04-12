@@ -14,12 +14,12 @@ namespace ModeloDDD.MVC.ViewModels
         [MinLength(2, ErrorMessage = "Minimo {0} caracteres")]
         public string Nome { get; set; }
 
-        [Required(ErrorMessage = "Preencha o campo nome")]
+        [Required(ErrorMessage = "Preencha o campo sobrenome")]
         [MaxLength(150, ErrorMessage = "Maximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Minimo {0} caracteres")]
         public string Sobrenome { get; set; }
 
-        [Required(ErrorMessage = "Preencha o campo nome")]
+        [Required(ErrorMessage = "Preencha o campo email")]
         [MaxLength(100, ErrorMessage = "Maximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Minimo {0} caracteres")]
         [EmailAddress (ErrorMessage = "Preencha um e-mail valido")]

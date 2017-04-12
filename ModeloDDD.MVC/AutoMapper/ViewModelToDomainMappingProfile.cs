@@ -1,20 +1,20 @@
-﻿//using AutoMapper;
+﻿using AutoMapper;
 using ModeloDDD.Domain.Entities;
 using ModeloDDD.MVC.ViewModels;
 
 namespace ModeloDDD.MVC.AutoMapper
 {
-    public class ViewModelToDomainMappingProfile 
+    public class ViewModelToDomainMappingProfile :Profile
     {
-    //    public override string ProfileName
-    //    {
-    //        get { return "ViewModelToDomainMappingProfile"; }
-    //    }
+        public  string ProfileName
+        {
+            get { return "ViewModelToDomainMappingProfile"; }
+        }
 
-    //    protected override void Configure()
-    //    {
-    //        Mapper.CreateMap<Cliente, ClienteViewModel>();
-    //        Mapper.CreateMap<Produtos, ProdutosViewModel>();
-    //    }
+        protected void Configure()
+        {
+            Mapper.Initialize(cfg => cfg.CreateMap<Cliente, ClienteViewModel>());
+            Mapper.Initialize(cfg => cfg.CreateMap<Produtos, ProdutosViewModel>());            
+        }
     }
 }

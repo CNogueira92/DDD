@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿using ModeloDDD.MVC.AutoMapper;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -13,7 +13,7 @@ namespace ModeloDDD.MVC
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            
+            AutoMapperConfig.RegisterMapping();
         }
     }
 }

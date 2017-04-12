@@ -6,11 +6,10 @@ namespace ModeloDDD.MVC.AutoMapper
     {
         public static void RegisterMapping()
         {
-
-            Mapper.Initialize(x =>
+             Mapper.Initialize(x =>
                {
                    x.AddProfile<DomainToViewModelMappingProfile>();
-                  // x.AddProfile<ViewModelToDomainMappingProfile>();
+                   x.AddProfile<ViewModelToDomainMappingProfile>();
                });
         }
     }
